@@ -1,0 +1,37 @@
+#hero {
+    /* background: url('hero-bg.jpg') no-repeat center center/cover; */
+    min-height: 100vh;
+    /* Ensures full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    padding: 0 20px;
+    font-family: monospace;
+    /* Adds some padding for smaller screens */
+}
+
+#hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background-color: #ff6f61;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.cta-btn:hover {
+    background-color: #ff4c39;
+}

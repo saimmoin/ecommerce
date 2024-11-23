@@ -1,0 +1,91 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Top Navigation Styling */
+.top-nav {
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #343a40;
+    /* Slightly lighter dark color */
+    padding: 15px 30px;
+    /* Increased padding for a more spacious feel */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* Higher than sidebar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1px;
+    /* Adds character spacing for a refined look */
+}
+
+.top-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 25px;
+    /* Increased spacing between links */
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    transition: color 0.3s ease;
+}
+
+.top-menu a:hover {
+    color: #ff6b6b;
+}
+
+.top-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #ff6b6b;
+    transition: width 0.3s ease;
+}
+
+.top-menu a:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+/* Ensure content below top navbar */
+body {
+    padding-top: 80px;
+    /* Adjust based on top navbar height */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .top-menu {
+        margin-top: 10px;
+    }
+
+    .top-menu a {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,31 @@
+/* Container for the top navbar and content layout */
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main layout for the left navbar and content */
+.main-layout {
+    display: flex;
+    flex-direction: row;
+    min-height: calc(100vh - 60px);
+    /* Height minus top navbar */
+}
+
+/* Content section */
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    padding-top: 60px;
+    /* To account for top navbar height */
+    padding-left: 270px;
+    /* To account for left navbar width */
+}
+
+/* Styles for ensuring the content adjusts properly */
+@media (max-width: 768px) {
+    .content {
+        padding-left: 0;
+    }
+}

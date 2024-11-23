@@ -1,0 +1,46 @@
+<div class="form-container">
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" class="form-control" [(ngModel)]="name" required />
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" class="form-control" [(ngModel)]="price" required />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control" rows="3" [(ngModel)]="description" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+            <input type="url" id="imageUrl" name="imageUrl" class="form-control" [(ngModel)]="imageUrl" />
+        </div>
+
+<div class="form-group">
+    <label for="categoryId">Category ID</label>
+    <select id="statusOption" name="categoryId" [(ngModel)]="categoryId" class="form-control" required>
+        <option [value]="null"></option>
+        <option *ngFor="let category of categories" [value]="category.categoryId">
+            {{ category.name }}
+        </option>
+    </select>
+</div>
+
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="number" id="stock" name="stock" class="form-control" [(ngModel)]="stock" required />
+        </div>
+
+        <div class="form-group">
+            <label for="createdAt">Created At</label>
+            <input type="date" id="createdAt" name="createdAt" class="form-control" [(ngModel)]="createdAt" required />
+        </div>
+
+        <button type="submit" class="btn-submit" *ngIf="!productId">Submit</button>
+        <button type="button" class="btn-update" (click)="update(productForm)" *ngIf="productId">Update</button>
+        </form>
+</div>

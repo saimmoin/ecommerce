@@ -1,0 +1,14 @@
+<div class="product-cards-container">
+    <div *ngFor="let product of products" class="product-card">
+        <img [src]="product.imageUrl" [alt]="product.name">
+        <div class="product-details">
+            <h3 class="product-name">{{ product.name }}</h3>
+            <p class="product-category">Category: {{ product.category }}</p>
+            <p class="product-price">Price: ${{ product.price }}</p>
+            <p class="product-stock" [ngClass]="{'out-of-stock': product.stock === 0}">
+                {{ product.stock > 0 ? 'In Stock: ' + product.stock : 'Out of Stock' }}
+            </p>
+            <button class="btn-add-to-cart" (click)="addToCart(product)">Add to Cart</button>
+        </div>
+    </div>
+</div>

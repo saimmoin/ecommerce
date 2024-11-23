@@ -1,0 +1,61 @@
+/* Left Sidebar Navigation */
+.left-nav {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    /* Fixed width for sidebar */
+    background-color: #212529;
+    /* Darker shade for better contrast */
+    padding: 20px;
+    height: calc(100vh - 80px);
+    /* Full height minus the top navbar */
+    position: fixed;
+    top: 60px;
+    /* Starts below the top navbar */
+    left: 0;
+    z-index: 900;
+    /* Below the top navbar */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Courier New', Courier, monospace;
+    /* Right shadow for depth */
+}
+
+.left-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    /* Increased spacing for clarity */
+    border-radius: 5px;
+    /* Rounded corners */
+    transition: background 0.3s ease, color 0.3s ease;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.left-nav a:hover,
+.left-nav a.active {
+    background-color: #ff6b6b;
+    /* Highlight on hover and active links */
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        /* Stack on top of content */
+        top: 0;
+        /* No fixed position on small screens */
+        padding: 10px 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .left-nav a {
+        margin: 5px;
+        padding: 10px;
+    }
+}
