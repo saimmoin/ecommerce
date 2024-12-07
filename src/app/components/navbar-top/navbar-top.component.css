@@ -8,10 +8,10 @@
 /* Top Navigation Styling */
 .top-nav {
     display: flex;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
     justify-content: space-between;
     align-items: center;
-    background-color: #343a40;
+    background-color: #003366;
     /* Slightly lighter dark color */
     padding: 15px 30px;
     /* Increased padding for a more spacious feel */
@@ -40,12 +40,12 @@
     margin-left: 25px;
     /* Increased spacing between links */
     position: relative;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
     transition: color 0.3s ease;
 }
 
 .top-menu a:hover {
-    color: #ff6b6b;
+    color: #39FF14;
 }
 
 .top-menu a::after {
@@ -56,7 +56,7 @@
     display: block;
     margin-top: 5px;
     right: 0;
-    background: #ff6b6b;
+    background: #39FF14;
     transition: width 0.3s ease;
 }
 

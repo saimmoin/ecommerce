@@ -1,3 +1,46 @@
-<ag-grid-angular [rowData]="rowData" [columnDefs]="colDefs" class="ag-theme-quartz"
-    style="height: 85%; width: 100%; margin-top: 25px;" [pagination]="pagination"
-    [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector">
+<!-- Main container -->
+<div style="height: calc(100vh - 50px); display: flex; flex-direction: column;">
+    <ag-grid-angular [rowData]="rowData" [columnDefs]="colDefs" class="ag-theme-quartz" style="flex: 1;"
+        [pagination]="pagination" [paginationPageSize]="paginationPageSize"
+        [paginationPageSizeSelector]="paginationPageSizeSelector">
+    </ag-grid-angular>
+
+    <!-- Button below the grid -->
+    <div class="button-container">
+        <button class="checkout-button" (click)="openModal()">Proceed to Checkout</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div *ngIf="isModalOpen" class="modal-overlay">
+    <div class="modal">
+        <h2>Order Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of rowData">
+                    <td>{{item.productId}}</td>
+                    <td>{{ item.productName }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.price * item.quantity }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total">
+            <strong>Total Price:</strong> {{ calculateTotalPrice() }}
+        </div>
+        <div class="modal-buttons">
+            <button (click)="closeModal()" class="close-button">Close</button>
+            <button class="checkout-confirm-button" (click)="checkout()">Confirm Checkout</button>
+        </div>
+    </div>
+</div>

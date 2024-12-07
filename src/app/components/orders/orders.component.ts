@@ -40,7 +40,7 @@ constructor(private http: HttpClient) {}
 
   colDefs: ColDef[] = [
     {field: "orderId"},
-   { field: "userInfo.name" },
+   { field: "name" },
    { field: "totalAmount" },
    { field: "status" },
    { field: "createdAt" },

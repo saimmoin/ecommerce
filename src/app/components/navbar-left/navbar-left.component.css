@@ -4,7 +4,7 @@
     flex-direction: column;
     width: 220px;
     /* Fixed width for sidebar */
-    background-color: #212529;
+    background-color: #003366;
     /* Darker shade for better contrast */
     padding: 20px;
     height: calc(100vh - 80px);
@@ -16,7 +16,7 @@
     z-index: 900;
     /* Below the top navbar */
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
     /* Right shadow for depth */
 }
 
@@ -30,12 +30,12 @@
     border-radius: 5px;
     /* Rounded corners */
     transition: background 0.3s ease, color 0.3s ease;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
 }
 
 .left-nav a:hover,
 .left-nav a.active {
-    background-color: #ff6b6b;
+    background-color: #39FF14;
     /* Highlight on hover and active links */
     color: #ffffff;
 }
