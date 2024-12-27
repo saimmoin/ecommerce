@@ -43,6 +43,22 @@ constructor(private http: HttpClient) {}
    { field: "name" },
    { field: "totalAmount" },
    { field: "status" },
-   { field: "createdAt" },
+    { field: "createdAt" },
+       {
+  headerName: "Update",
+  field: "Update",
+  cellRenderer: (params: any) => {
+    const button = document.createElement('button');
+    button.innerText = 'Update Status';
+    button.style.backgroundColor = 'green';
+    button.style.color = 'white';
+    button.style.fontFamily = 'monospace';
+    button.addEventListener('click', () => {
+    console.log("Cell clicked:", params.data);
+      this.router.navigate(['/update'], { queryParams: { id: params.data.orderId } });
+    });
+    return button;
+  }
+}
  ];
 }

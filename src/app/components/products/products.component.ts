@@ -31,9 +31,9 @@ export class ProductsComponent {
   }
 
   getAllProducts() {
-    debugger;
+    ;
     this.http.get("http://localhost:8080/api/v1/productsList").subscribe((result:any)=>{
-      debugger;
+      ;
       this.rowData = result;
     })
   }

@@ -19,9 +19,9 @@ export class ProductCardsComponent {
   products: any[] = [];
 
     getAllProducts() {
-    debugger;
+    ;
     this.http.get("http://localhost:8080/api/v1/productsList").subscribe((result:any)=>{
-      debugger;
+      ;
       this.products = result;
       console.log(result);
     })

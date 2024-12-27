@@ -7,7 +7,7 @@
 
     <!-- Button below the grid -->
     <div class="button-container">
-        <button class="checkout-button" (click)="openModal()">Proceed to Checkout</button>
+        <button class="checkout-button" (click)="openModal()" [disabled]="rowData.length === 0">Proceed to Checkout</button>
     </div>
 </div>
 

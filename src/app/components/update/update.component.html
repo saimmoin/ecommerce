@@ -1,0 +1,98 @@
+<div class="order-container">
+    <div class="order-card">
+        <h1>Order Details</h1>
+        <div class="order-detail">
+            <span class="label">Order ID:</span>
+            <span class="value">{{ orderId || 'N/A' }}</span>
+        </div>
+        <div class="order-detail">
+            <span class="label">Username:</span>
+            <span class="value">{{ username }}</span>
+        </div>
+        <div class="order-detail">
+            <span class="label">Total Amount:</span>
+            <span class="value">${{ totalAmount.toFixed(2) }}</span>
+        </div>
+        <div class="order-detail">
+            <span class="label">Status:</span>
+            <span class="value status" [class.pending]="status === 'Pending'" [class.completed]="status === 'Completed'"
+                [class.canceled]="status === 'Canceled'">
+                {{ status }}
+            </span>
+        </div>
+        <div class="order-items-container">
+            <table class="order-items-table">
+                <thead>
+                    <tr>
+                        <th>Order Item ID</th>
+                        <th>ProductID</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of orders">
+                        <td>{{ item.orderItemId }}</td>
+                        <td>{{ item.productId }}</td>
+                        <td>{{ item.productInfo.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.productInfo.categoryInfo.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="order-buttons">
+            <button class="cancel-button" (click)="openModals()" [disabled]="status !== 'pending'">Cancel</button>
+            <button class="shipped-button" (click)="openModal()"  [disabled]="status !== 'pending'">Shipped</button>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div *ngIf="isModalOpens" class="modal-overlay">
+    <div class="modal">
+        <h2>Cancel Order</h2>
+        <div class="remarks-input">
+            <label for="remarks" class="remarks-label">Remarks:</label>
+            <textarea id="remarks" name="remarks" rows="4" cols="50"  [(ngModel)]="remarks"  style="resize: none; width: 100%; height: auto; max-height: 100px;"></textarea>
+        </div>
+        <div class="modal-buttons">
+            <button (click)="closeModals()" class="close-button">Close</button>
+            <button class="cancel-button" (click)="cancelOrder()">Cancel Order</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div *ngIf="isModalOpen" class="modal-overlay">
+    <div class="modal">
+        <h2>Payment Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ orderId }}</td>
+                    <td>${{ totalAmount.toFixed(2) }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <select id="payment-method" [(ngModel)]="selectedPaymentMethod">
+            <option *ngFor="let method of paymentMethods" [value]="method">
+                {{ method }}
+            </option>
+        </select>
+        <div class="modal-buttons">
+            <button (click)="closeModal()" class="close-button">Close</button>
+            <button class="checkout-confirm-button" (click)="checkout()">Confirm Checkout</button>
+        </div>
+    </div>
+</div>

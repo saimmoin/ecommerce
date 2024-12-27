@@ -62,7 +62,7 @@ constructor(private http: HttpClient) {}
         .subscribe(
           (result: any) => {
             console.log("Product removed from cart:", result);
-            alert(result); // Displays the plain text response
+            alert("Product removed from cart"); // Displays the plain text response
             window.location.reload();
           },
           (error: any) => {
@@ -92,7 +92,35 @@ calculateTotalPrice(): number {
     }
 
   checkout() {
-    alert("Checkout Successfull")
+    const payload = {
+    userId: 1, 
+    totalAmount: this.calculateTotalPrice(),
+    status: "pending",
+    createdAt: new Date(),
+    orderItems: this.rowData.map((item: any) => ({
+      productId: item.productId,
+      quantity: item.quantity,
+      price: item.price
+    }))
+  };
+
+  this.http.post("http://localhost:8080/api/v1/orders/save", payload, { responseType: 'text' })
+    .subscribe(
+      (response: any) => {
+        console.log(response);
+        alert(response);
+        this.http.get("http://localhost:8080/api/v1/shoppingCarts/emptyCart").subscribe((result: any) => { 
+          console.log(result);
+        });
+        this.closeModal();
+        this.router.navigate(['/ordersList']);
+      },
+      (error: any) => {
+        console.error("Error while placing order:", error);
+        alert("Failed to place order. Please try again.");
+      }
+    );
   }
 
 }
+

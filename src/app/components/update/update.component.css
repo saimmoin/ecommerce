@@ -1,0 +1,367 @@
+.order-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: monospace;
+}
+
+.order-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.order-detail {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.label {
+    font-weight: bold;
+    color: #555555;
+}
+
+.value {
+    font-size: 1rem;
+    color: #777777;
+}
+
+.value.status {
+    font-weight: bold;
+}
+
+.value.pending {
+    color: #ff9800;
+}
+
+.value.completed {
+    color: #4caf50;
+}
+
+.value.canceled {
+    color: #f44336;
+}
+
+
+
+.order-items-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: monospace;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.order-items-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-items-table th,
+.order-items-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.order-items-table th {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.order-buttons {
+    display: flex;
+    justify-content: flex-end;
+    /* Align buttons to the right */
+    gap: 15px;
+    /* Space between buttons */
+    margin-top: 20px;
+    /* Space from other elements */
+}
+
+.order-buttons button {
+    font-family: monospace;
+    padding: 10px 20px;
+    /* Comfortable padding for better click area */
+    font-size: 16px;
+    /* Professional font size */
+    font-weight: 600;
+    /* Bold font for emphasis */
+    border-radius: 5px;
+    /* Rounded corners */
+    border: none;
+    /* Clean border */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth hover effects */
+}
+
+.order-buttons .cancel-button {
+    background-color: #ff4d4d;
+    /* Red for cancel */
+    color: white;
+    /* White text for contrast */
+}
+
+.order-buttons .cancel-button:hover {
+    background-color: #e63939;
+    /* Darker red on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
+}
+
+.order-buttons .cancel-button:disabled {
+    background-color: #f0f0f0;
+    /* Disabled gray background */
+    color: #cccccc;
+    /* Disabled gray text */
+    cursor: not-allowed;
+    /* Indicate non-clickable state */
+}
+
+.order-buttons .shipped-button {
+    background-color: #4caf50;
+    /* Green for shipped */
+    color: white;
+    /* White text for contrast */
+}
+
+.order-buttons .shipped-button:hover {
+    background-color: #43a047;
+    /* Darker green on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
+}
+
+.order-buttons .shipped-button:disabled {
+    background-color: #f0f0f0;
+        /* Disabled gray background */
+        color: #cccccc;
+        /* Disabled gray text */
+        cursor: not-allowed;
+        /* Indicate non-clickable state */
+}
+
+/* General Button Styling for Consistency */
+.order-buttons button:focus {
+    outline: none;
+    /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* Add subtle focus shadow */
+}
+
+/* Modal */
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Header */
+.modal h2 {
+    margin: 0 0 20px;
+    text-align: center;
+    font-family: monospace;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background: #f4f4f4;
+    font-family: monospace;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-family: monospace;
+}
+
+th {
+    font-weight: bold;
+    font-family: monospace;
+}
+
+/* Total Price */
+.total {
+    text-align: right;
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-family: monospace;
+}
+
+/* Modal Buttons */
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    /* Align buttons to the right */
+    gap: 15px;
+    /* Space between buttons */
+    margin-top: 20px;
+    /* Space from other elements */
+}
+
+.close-button,
+.checkout-confirm-button, .cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.close-button {
+    background: #ccc;
+    font-family: monospace;
+}
+
+.checkout-confirm-button {
+    background: #4CAF50;
+    font-family: monospace;
+    color: white;
+    font-weight: bold;
+}
+
+/* Container for aligning the button to the right */
+.button-container {
+    text-align: right;
+    margin-top: 15px;
+    /* Adds spacing between the grid and the button */
+    padding-right: 15px;
+    /* Aligns the button nicely within the layout */
+}
+
+/* Styling for the checkout button */
+.checkout-button {
+    font-family: monospace;
+    background-color: #4CAF50;
+    /* Green color for the button */
+    color: white;
+    /* White text */
+    padding: 10px 20px;
+    /* Padding for a comfortable clickable area */
+    font-size: 16px;
+    /* Slightly larger font size for prominence */
+    border: none;
+    /* Removes default border */
+    border-radius: 5px;
+    /* Adds rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth hover effects */
+}
+
+/* Hover effect */
+.checkout-button:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+/* Active state for button click */
+.checkout-button:active {
+    background-color: #3e8e41;
+    /* Even darker green when clicked */
+    transform: scale(0.98);
+    /* Slight "press" effect */
+}
+
+.ag-theme-quartz {
+    font-family: monospace;
+}
+
+#payment-method {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    font-family: monospace;
+    appearance: none;
+    /* Removes default dropdown arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    /* Custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#payment-method:focus {
+    border-color: #4CAF50;
+    /* Match modal confirm button color */
+    outline: none;
+}
+
+.cancel-button {
+    background-color: #ff4d4d;
+        /* Red for cancel */
+        color: white;
+        /* White text for contrast */
+}
+
+textarea {
+    resize: vertical;
+    /* padding: 10px; */
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    font-family: monospace;
+    transition: border-color 0.3s ease;
+}
+
+.remarks-label {
+    font-family: monospace;
+    font-size: 14px;
+}

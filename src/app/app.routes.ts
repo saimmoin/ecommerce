@@ -8,6 +8,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { CartComponent } from './components/cart/cart.component';
+import { UpdateComponent } from './components/update/update.component';
 
 export const routes: Routes = [
     {
@@ -51,5 +52,9 @@ export const routes: Routes = [
     {
         path: 'shopping-cart',
         component: CartComponent
+    },
+    {
+        path: 'update',
+        component: UpdateComponent
     }
 ];

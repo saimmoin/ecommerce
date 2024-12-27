@@ -138,3 +138,12 @@ th {
 .ag-theme-quartz {
     font-family: monospace;
 }
+
+.checkout-button:disabled {
+    background-color: #f0f0f0;
+    /* Disabled gray background */
+    color: #cccccc;
+    /* Disabled gray text */
+    cursor: not-allowed;
+    /* Indicate non-clickable state */
+}
