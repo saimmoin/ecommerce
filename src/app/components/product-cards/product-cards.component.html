@@ -8,7 +8,22 @@
             <p class="product-stock" [ngClass]="{'out-of-stock': product.stock === 0}">
                 {{ product.stock > 0 ? 'In Stock: ' + product.stock : 'Out of Stock' }}
             </p>
-            <button class="btn-add-to-cart" (click)="addToCart(product)">Add to Cart</button>
+            <button class="btn-add-to-cart" (click)="openModal(product)" [disabled]="product.stock === 0">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div *ngIf="showModal" class="modal-overlay">
+    <div class="modal">
+        <h2>Add to Cart </h2>
+        <div class="quantity-input">
+            <label for="quantity" class="quantity-label">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" [(ngModel)]="quantity" required>
+        </div>
+        <div class="modal-buttons">
+            <button (click)="closeModal()" class="close-button">Close</button>
+            <button class="add-button" (click)="addToCart(productInfo)">Add to Cart</button>
         </div>
     </div>
 </div>

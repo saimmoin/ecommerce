@@ -1,31 +1,42 @@
-/* Container for the top navbar and content layout */
+/* Top-level layout */
 .layout {
     display: flex;
     flex-direction: column;
 }
 
-/* Main layout for the left navbar and content */
+/* Main layout with navbar and content */
 .main-layout {
     display: flex;
     flex-direction: row;
     min-height: calc(100vh - 60px);
-    /* Height minus top navbar */
+    /* Adjust for top navbar */
 }
 
-/* Content section */
+/* Content area when navbar is open */
 .content {
     flex: 1;
     padding: 20px;
     background-color: #f9f9f9;
     padding-top: 60px;
-    /* To account for top navbar height */
+    /* Space for top navbar */
     padding-left: 270px;
-    /* To account for left navbar width */
+    /* Space for open navbar */
+    transition: padding-left 0.3s ease, margin-left 0.3s ease;
+    /* Smooth adjustment */
 }
 
-/* Styles for ensuring the content adjusts properly */
+/* Content area when navbar is closed */
+.content.navbar-closed {
+    padding-left: 50px;
+    /* Minimal padding for closed navbar */
+    margin-left: 20px;
+    /* Small gap between navbar and content */
+}
+
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
     .content {
         padding-left: 0;
+        margin-left: 0;
     }
 }

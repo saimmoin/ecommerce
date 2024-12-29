@@ -13,11 +13,15 @@
     top: 60px;
     /* Starts below the top navbar */
     left: 0;
+    /* Start as visible */
     z-index: 900;
     /* Below the top navbar */
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     font-family: monospace;
     /* Right shadow for depth */
+    left: -220px;
+        /* Initially hidden */
+    transition: left 0.3s ease;
 }
 
 .left-nav a {
@@ -58,4 +62,38 @@
         margin: 5px;
         padding: 10px;
     }
+}
+
+.left-nav.open {
+    left: 0;
+    /* Slide in */
+}
+
+.nav-toggle {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+/* Move the button when the navbar is open */
+.nav-toggle.move {
+    left: 220px;
+    /* Move the button along with the navbar */
+}
+
+/* When navbar is closed, keep button at left: 0 */
+.nav-toggle:not(.move) {
+    left: 0;
+}
+
+.left-nav.open+.nav-toggle {
+    left: 210px;
+    /* Adjust position when navbar is open */
 }
