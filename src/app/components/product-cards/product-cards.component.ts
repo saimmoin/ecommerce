@@ -47,7 +47,8 @@ export class ProductCardsComponent {
       this.http.post("http://localhost:8080/api/v1/shoppingCarts/add", { userId: 1, productId: product.productId, quantity: this.quantity, addedAt: new Date(), price: product.price, productName: product.name}, { responseType: 'text' })
       .subscribe((result: any) => {
         alert("Product added to cart successfully");
-        this.router.navigate(['/shopping-cart']);
+        this.showModal = false;
+        // this.router.navigate(['/shopping-cart']);
     })
     }
 

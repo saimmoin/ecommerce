@@ -10,6 +10,7 @@ import { PaymentsComponent } from './components/payments/payments.component';
 import { CartComponent } from './components/cart/cart.component';
 import { UpdateComponent } from './components/update/update.component';
 import { CardPaymentComponent } from './components/card-payment/card-payment.component';
+import { ServiceComponent } from './components/service/service.component';
 
 export const routes: Routes = [
     {
@@ -61,5 +62,9 @@ export const routes: Routes = [
     {
         path: 'card-payment',
         component: CardPaymentComponent
+    },
+    {
+        path: 'services',
+        component: ServiceComponent
     }
 ];
