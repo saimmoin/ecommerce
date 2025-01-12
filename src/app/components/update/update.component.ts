@@ -109,18 +109,23 @@ export class UpdateComponent {
 
 
   checkout() {
-    this.http.post("http://localhost:8080/api/v1/payments/add", { orderId: this.orderId, amount: this.totalAmount, paymentMethod: this.selectedPaymentMethod, status: "pending", paidAt: new Date() }, { responseType: 'text' })
-      .subscribe(
-        response => {
-          alert("Payment added successfully");
-          this.shippedOrder();
-          this.router.navigate(['/ordersList']);
-        },
-        error => {
-          console.error(error);
-          alert("Failed to update order");
-        }
-    )
+    if (this.selectedPaymentMethod === 'credit_card' || this.selectedPaymentMethod === 'paypal') {
+      this.router.navigate(['/card-payment'], { queryParams: { orderId: this.orderId, amount: this.totalAmount, paymentMethod: this.selectedPaymentMethod} });
+     }
+    else {
+      this.http.post("http://localhost:8080/api/v1/payments/add", { orderId: this.orderId, amount: this.totalAmount, paymentMethod: this.selectedPaymentMethod, status: "pending", paidAt: new Date() }, { responseType: 'text' })
+        .subscribe(
+          response => {
+            alert("Payment added successfully");
+            this.shippedOrder();
+            this.router.navigate(['/ordersList']);
+          },
+          error => {
+            console.error(error);
+            alert("Failed to update order");
+          }
+      )
+    }
   }
 
 }

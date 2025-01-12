@@ -9,6 +9,7 @@ import { AddCategoryComponent } from './components/add-category/add-category.com
 import { PaymentsComponent } from './components/payments/payments.component';
 import { CartComponent } from './components/cart/cart.component';
 import { UpdateComponent } from './components/update/update.component';
+import { CardPaymentComponent } from './components/card-payment/card-payment.component';
 
 export const routes: Routes = [
     {
@@ -56,5 +57,9 @@ export const routes: Routes = [
     {
         path: 'update',
         component: UpdateComponent
+    },
+    {
+        path: 'card-payment',
+        component: CardPaymentComponent
     }
 ];

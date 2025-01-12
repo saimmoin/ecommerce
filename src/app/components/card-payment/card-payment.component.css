@@ -1,0 +1,115 @@
+body {
+    font-family: monospace;
+    background-color: #eef2f3;
+    display: flex;
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    height: 100vh;
+    /* Ensures body takes the full height */
+    margin: 0;
+    /* Removes default margin */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#payment-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5%;
+    /* Apply 5% margin around the form */
+}
+
+#card-element {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    font-family: monospace;
+    transition: border-color 0.3s;
+}
+
+#card-element:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    margin: 12px 0;
+    text-align: center;
+    font-family: monospace;
+    /* Monospace font */
+}
+
+/* Main Wrapper for Cards */
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Space between cards */
+    font-family: monospace;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 30px;
+}
+
+/* Separate Card Styling for Order ID and Amount */
+#order-info,
+#test-card-info {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    font-family: monospace;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Text inside the order and test cards */
+#order-info p,
+#test-card-info p {
+    color: #333;
+    margin: 8px 0;
+    font-family: monospace;
+}
+
+#test-card-info p strong {
+    font-size: 18px;
+    color: #333;
+    font-family: monospace;
+}

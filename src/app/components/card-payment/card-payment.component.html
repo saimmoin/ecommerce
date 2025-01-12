@@ -1,0 +1,21 @@
+<!-- Payment Form -->
+<form id="payment-form">
+    <div id="card-element"></div>
+    <button type="button" (click)="submitPayment()">Pay Now</button>
+</form>
+
+<!-- Cards Wrapper: Order Info & Test Card Info -->
+<div class="cards-wrapper">
+    <!-- Order Info Card -->
+    <div id="order-info">
+        <p class="order-id">Order ID: {{ orderId }}</p>
+        <p class="amount">Amount: ${{ amount }}</p>
+    </div>
+
+    <!-- Test Card Info -->
+    <div id="test-card-info">
+        <p>Use test card:</p>
+        <p><strong>4242 4242 4242 4242</strong></p>
+        <p>Exp: 12/34, CVV: 123</p>
+    </div>
+</div>
